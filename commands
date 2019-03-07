@@ -1,0 +1,17 @@
+create database test 10 MB
+use database test
+create table test2 -columns=id,saldo,nombre -types=int,double,char(50) -key=id
+create table test -columns=id,age -types=int,int -key=id
+insert test2 -columns=id,saldo,nombre -values=1,50.2,'Jonathan'
+insert test2 -columns=id,saldo,nombre -values=2,50.5,'Kamil'
+update test2 -columns=saldo -values=50.7 -where=id<>1
+update test2 -columns=id -values=5 -where=nombre<>'Jonathan'
+select -table=test2 -columns=id,saldo,nombre -where=id<>1
+delete test2 -where=id<>2
+
+del 1 al 7 int,int/double,int/double,char(50) 
+campo1 campo2 campo3 campo4
+del 8 al 10 int, int/double, int/double, char/int/double
+ 8 -> id, saldo, cuenta, nombre
+ 9 -> id, codigo, precio, marca
+ 10 -> id, telefono, cedula, nombre
